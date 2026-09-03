@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML Prediction App</title><style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+        padding: 40px;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        text-align: center;
+        color: #666;
+        margin-bottom: 25px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 25px;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        background: #2563eb;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #1d4ed8;
+    }
+
+    .result {
+        margin-top: 25px;
+        padding: 15px;
+        background: #eef6ff;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        body {
+            padding: 15px;
+        }
+    }
+</style>
+
+</head><body><div class="container"><h1>ML Prediction App</h1>
+
+<p class="subtitle">
+    Enter the feature values to get a prediction
+</p>
+
+<form method="POST">
+
+    <div class="grid">
+
+        <div>
+            <label>Flength</label>
+            <input type="number" step="any" name="Flength" required>
+        </div>
+
+        <div>
+            <label>Fwidth</label>
+            <input type="number" step="any" name="Fwidth" required>
+        </div>
+
+        <div>
+            <label>Fsize</label>
+            <input type="number" step="any" name="Fsize" required>
+        </div>
+
+        <div>
+            <label>Fconc</label>
+            <input type="number" step="any" name="Fconc" required>
+        </div>
+
+        <div>
+            <label>Fconc1</label>
+            <input type="number" step="any" name="Fconc1" required>
+        </div>
+
+        <div>
+            <label>Fasym</label>
+            <input type="number" step="any" name="Fasym" required>
+        </div>
+
+        <div>
+            <label>Fm3long</label>
+            <input type="number" step="any" name="Fm3long" required>
+        </div>
+
+        <div>
+            <label>Fm3trans</label>
+            <input type="number" step="any" name="Fm3trans" required>
+        </div>
+
+        <div>
+            <label>Falpha</label>
+            <input type="number" step="any" name="Falpha" required>
+        </div>
+
+        <div>
+            <label>Fdist</label>
+            <input type="number" step="any" name="Fdist" required>
+        </div>
+
+    </div>
+
+    <button type="submit">Predict</button>
+
+</form>
+
+{% if prediction is not none %}
+    <div class="result">
+        Prediction: {{ prediction }}
+    </div>
+{% endif %}
+
+</div></body>
+</html>
